@@ -48,7 +48,9 @@ packages/css/
     surface.css
 
   patterns/
-    coming later
+    header.css
+    hero.css
+    footer.css
 ```
 
 ## Foundation Files
@@ -73,6 +75,12 @@ packages/css/
 - `elements/status.css` — object state element.
 - `elements/surface.css` — universal information surface element.
 
+## Pattern Files
+
+- `patterns/header.css` — persistent orientation and primary navigation pattern.
+- `patterns/hero.css` — main intent and first decision pattern.
+- `patterns/footer.css` — closing navigation, brand and meta information pattern.
+
 ## Usage
 
 ```html
@@ -90,6 +98,9 @@ packages/css/
 <link rel="stylesheet" href="/path/to/uvdl/elements/notice.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/status.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/surface.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/header.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/hero.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/footer.css">
 ```
 
 ## Naming Rule
@@ -125,6 +136,33 @@ Project-specific:
 `surface surface-card` belongs to UVDL.
 
 `service-card` belongs to the project.
+
+## Pattern Rule
+
+A Pattern is a composition of Elements.
+
+A Pattern should mostly define layout, spacing, alignment and responsive behavior.
+
+A Pattern should not duplicate Element responsibility.
+
+Good:
+
+```html
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1 class="text-display">Main intent</h1>
+      <p class="text-subtitle">Supporting explanation.</p>
+      <div class="hero-actions">
+        <a class="action action-main" href="#">Primary action</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="media media-wide"></div>
+    </div>
+  </div>
+</section>
+```
 
 ## Brand Rule
 
