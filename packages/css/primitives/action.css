@@ -1,0 +1,95 @@
+/*
+ * Ultima Vox Design Language
+ * Action Component
+ * Version: 0.3.0
+ * Status: Draft
+ */
+
+@import url('../foundation/foundation.css');
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.action:hover {
+  transform: translateY(-1px);
+}
+
+.action:active {
+  transform: translateY(0);
+}
+
+.action:disabled,
+.action[aria-disabled="true"] {
+  opacity: .6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.action-main {
+  background: var(--action-primary-bg);
+  color: var(--action-primary-text);
+}
+
+.action-main:hover {
+  background: var(--action-primary-hover);
+}
+
+.action-support {
+  background: var(--action-secondary-bg);
+  color: var(--action-secondary-text);
+}
+
+.action-neutral {
+  border-color: var(--border-default);
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+.action-ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.action-danger {
+  background: var(--danger);
+  color: var(--text-inverse);
+}
+
+.action-sm {
+  min-height: 2.25rem;
+  padding-inline: var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.action-lg {
+  min-height: 3.25rem;
+  padding-inline: var(--space-6);
+  font-size: var(--font-size-lg);
+}
+
+.action-block {
+  display: flex;
+  width: 100%;
+}
