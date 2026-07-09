@@ -1,10 +1,10 @@
 /*
  * Ultima Vox Design Language
  * Base CSS
- * Version: 0.3.0
+ * Version: 0.4.0
  */
 
-@import url('./foundation.css');
+@import url('./tokens.css');
 
 *,
 *::before,
