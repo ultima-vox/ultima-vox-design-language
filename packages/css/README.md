@@ -37,6 +37,7 @@ packages/css/
   elements/
     action.css
     brand.css
+    dialog.css
     disclosure.css
     field.css
     icon.css
@@ -62,6 +63,7 @@ packages/css/
 
 - `elements/action.css` — universal action element.
 - `elements/brand.css` — universal brand identity element.
+- `elements/dialog.css` — universal focused interaction element.
 - `elements/disclosure.css` — universal show/hide information element.
 - `elements/field.css` — universal input and form field element.
 - `elements/icon.css` — universal icon element.
@@ -79,6 +81,7 @@ packages/css/
 <link rel="stylesheet" href="/path/to/uvdl/foundation/layout.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/action.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/brand.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/dialog.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/disclosure.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/field.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/icon.css">
@@ -226,6 +229,51 @@ FAQ and accordion patterns may use `disclosure`.
     Answer text.
   </div>
 </details>
+```
+
+## Dialog Rule
+
+Dialog temporarily moves the human into a focused interaction context.
+
+Use it only when interruption is justified.
+
+```html
+<dialog class="dialog" aria-labelledby="dialog-title">
+  <div class="dialog-panel">
+    <header class="dialog-header">
+      <div>
+        <h2 class="dialog-title" id="dialog-title">Dialog title</h2>
+        <p class="dialog-description">Short explanation.</p>
+      </div>
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+    </header>
+    <div class="dialog-body">
+      Dialog content.
+    </div>
+    <footer class="dialog-footer">
+      <button class="action action-neutral" type="button">Cancel</button>
+      <button class="action action-main" type="button">Confirm</button>
+    </footer>
+  </div>
+</dialog>
+```
+
+## Core Elements Status
+
+The CSS Elements MVP is complete when the following files exist:
+
+```text
+action.css
+brand.css
+dialog.css
+disclosure.css
+field.css
+icon.css
+media.css
+navigation.css
+notice.css
+status.css
+surface.css
 ```
 
 ## Rule
