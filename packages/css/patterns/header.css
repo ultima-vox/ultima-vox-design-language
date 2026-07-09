@@ -1,0 +1,88 @@
+/*
+ * Ultima Vox Design Language
+ * Header Pattern
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Header provides persistent orientation and primary access to navigation and actions.
+ * It is a pattern composed from Brand, Navigation, Action and Surface.
+ */
+
+@import url('../foundation/tokens.css');
+
+.header {
+  position: relative;
+  z-index: var(--z-header);
+  background: var(--surface-page);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.header-elevated {
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: 4.5rem;
+}
+
+.header-brand {
+  flex: 0 0 auto;
+}
+
+.header-navigation {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.header-toggle {
+  display: none;
+}
+
+.header-compact .header-inner {
+  min-height: 3.75rem;
+}
+
+.header-transparent {
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    min-height: 4rem;
+    gap: var(--space-4);
+  }
+
+  .header-navigation {
+    display: none;
+  }
+
+  .header-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-actions {
+    display: none;
+  }
+}
