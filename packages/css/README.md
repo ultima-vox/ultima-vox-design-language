@@ -37,8 +37,10 @@ packages/css/
   elements/
     action.css
     brand.css
+    disclosure.css
     field.css
     icon.css
+    media.css
     navigation.css
     notice.css
     status.css
@@ -60,8 +62,10 @@ packages/css/
 
 - `elements/action.css` — universal action element.
 - `elements/brand.css` — universal brand identity element.
+- `elements/disclosure.css` — universal show/hide information element.
 - `elements/field.css` — universal input and form field element.
 - `elements/icon.css` — universal icon element.
+- `elements/media.css` — universal visual media element.
 - `elements/navigation.css` — universal navigation element.
 - `elements/notice.css` — user-facing notice element.
 - `elements/status.css` — object state element.
@@ -75,8 +79,10 @@ packages/css/
 <link rel="stylesheet" href="/path/to/uvdl/foundation/layout.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/action.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/brand.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/disclosure.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/field.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/icon.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/media.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/navigation.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/notice.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/status.css">
@@ -189,6 +195,37 @@ Icons should not replace text by default.
 <span class="icon icon-sm" aria-hidden="true">
   <svg viewBox="0 0 24 24"></svg>
 </span>
+```
+
+## Media Rule
+
+Media displays visual content such as images, video, illustrations, maps, or embeds.
+
+```html
+<figure>
+  <div class="media media-wide">
+    <img src="/image.jpg" alt="Description">
+  </div>
+  <figcaption class="media-caption">Image caption</figcaption>
+</figure>
+```
+
+## Disclosure Rule
+
+Disclosure shows or hides related information on demand.
+
+FAQ and accordion patterns may use `disclosure`.
+
+```html
+<details class="disclosure">
+  <summary class="disclosure-summary">
+    Question
+    <span class="disclosure-indicator" aria-hidden="true">⌄</span>
+  </summary>
+  <div class="disclosure-content">
+    Answer text.
+  </div>
+</details>
 ```
 
 ## Rule
