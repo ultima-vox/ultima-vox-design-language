@@ -1,0 +1,100 @@
+/*
+ * Ultima Vox Design Language
+ * Notice Element
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Notice communicates something the human should know now.
+ * It is about user attention, not object state.
+ */
+
+@import url('../foundation/tokens.css');
+
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+  color: var(--text-primary);
+}
+
+.notice-icon {
+  flex: 0 0 auto;
+  margin-block-start: 0.125em;
+  color: currentColor;
+}
+
+.notice-content {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.notice-title {
+  color: currentColor;
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+}
+
+.notice-text {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.notice-title + .notice-text {
+  margin-block-start: var(--space-1);
+}
+
+.notice-info {
+  border-color: color-mix(in srgb, var(--info) 32%, var(--border-default));
+  background: color-mix(in srgb, var(--info) 8%, var(--surface-page));
+}
+
+.notice-success {
+  border-color: color-mix(in srgb, var(--success) 32%, var(--border-default));
+  background: color-mix(in srgb, var(--success) 8%, var(--surface-page));
+}
+
+.notice-warning {
+  border-color: color-mix(in srgb, var(--warning) 36%, var(--border-default));
+  background: color-mix(in srgb, var(--warning) 10%, var(--surface-page));
+}
+
+.notice-danger {
+  border-color: color-mix(in srgb, var(--danger) 36%, var(--border-default));
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface-page));
+}
+
+.notice-info .notice-icon,
+.notice-info .notice-title {
+  color: var(--info);
+}
+
+.notice-success .notice-icon,
+.notice-success .notice-title {
+  color: var(--success);
+}
+
+.notice-warning .notice-icon,
+.notice-warning .notice-title {
+  color: var(--warning);
+}
+
+.notice-danger .notice-icon,
+.notice-danger .notice-title {
+  color: var(--danger);
+}
+
+.notice-compact {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.notice-banner {
+  border-radius: 0;
+  border-inline: 0;
+}
