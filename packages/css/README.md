@@ -1,7 +1,7 @@
 # UVDL CSS Package
 
 **Status:** Draft  
-**Version:** 0.3.0 CSS MVP  
+**Version:** 0.4.0 Architecture  
 
 ## Purpose
 
@@ -10,13 +10,13 @@ This package contains the first practical CSS implementation of UVDL.
 The MVP is intentionally simple:
 
 ```text
-manual foundation tokens
+manual tokens
   ↓
 base CSS
   ↓
-primitive components
+elements
   ↓
-composite patterns
+patterns
   ↓
 reference project usage
 ```
@@ -29,33 +29,35 @@ No Builder, Compiler, Style Dictionary, schema validation, or generated CSS is u
 packages/css/
   foundation/
     fonts.css
-    foundation.css
+    tokens.css
     base.css
     typography.css
     layout.css
 
-  primitives/
+  elements/
     action.css
     brand.css
+    navigation.css
     surface.css
 
-  composites/
+  patterns/
     coming later
 ```
 
 ## Foundation Files
 
 - `foundation/fonts.css` — project font roles and presets.
-- `foundation/foundation.css` — readable CSS custom properties.
+- `foundation/tokens.css` — readable CSS custom properties.
 - `foundation/base.css` — reset and base HTML element styles.
 - `foundation/typography.css` — text scale utility classes.
 - `foundation/layout.css` — container, section, stack, cluster and grid utilities.
 
-## Primitive Files
+## Element Files
 
-- `primitives/action.css` — universal action component.
-- `primitives/brand.css` — universal brand identity component.
-- `primitives/surface.css` — universal information surface component.
+- `elements/action.css` — universal action element.
+- `elements/brand.css` — universal brand identity element.
+- `elements/navigation.css` — universal navigation element.
+- `elements/surface.css` — universal information surface element.
 
 ## Usage
 
@@ -63,9 +65,10 @@ packages/css/
 <link rel="stylesheet" href="/path/to/uvdl/foundation/base.css">
 <link rel="stylesheet" href="/path/to/uvdl/foundation/typography.css">
 <link rel="stylesheet" href="/path/to/uvdl/foundation/layout.css">
-<link rel="stylesheet" href="/path/to/uvdl/primitives/action.css">
-<link rel="stylesheet" href="/path/to/uvdl/primitives/brand.css">
-<link rel="stylesheet" href="/path/to/uvdl/primitives/surface.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/action.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/brand.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/navigation.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/surface.css">
 ```
 
 ## Naming Rule
@@ -121,6 +124,24 @@ Good:
 `brand`, `brand-mark`, `brand-name`, and `brand-tagline` belong to UVDL.
 
 The logo file, project name, and tagline belong to the project.
+
+## Navigation Rule
+
+UVDL defines navigation as movement between information areas.
+
+Header, footer, tabs, breadcrumbs, pagination and sidebars are patterns that may use `navigation`.
+
+Good:
+
+```html
+<nav class="navigation navigation-horizontal" aria-label="Primary navigation">
+  <ul class="navigation-list">
+    <li class="navigation-item">
+      <a class="navigation-link" href="/" aria-current="page">Home</a>
+    </li>
+  </ul>
+</nav>
+```
 
 ## Rule
 
