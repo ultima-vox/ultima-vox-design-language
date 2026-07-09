@@ -1,0 +1,157 @@
+/*
+ * Ultima Vox Design Language
+ * Field Element
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Field receives information from the human.
+ * It covers labels, controls, hints, validation messages and grouped inputs.
+ */
+
+@import url('../foundation/tokens.css');
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.field-label {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+}
+
+.field-required {
+  color: var(--danger);
+}
+
+.field-control {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font: inherit;
+  line-height: var(--line-body);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+}
+
+.field-control::placeholder {
+  color: var(--text-muted);
+}
+
+.field-control:hover {
+  border-color: var(--border-strong);
+}
+
+.field-control:focus {
+  outline: none;
+  border-color: var(--info);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--info) 18%, transparent);
+}
+
+textarea.field-control {
+  min-height: 7rem;
+  padding-block: var(--space-3);
+  resize: vertical;
+}
+
+select.field-control {
+  appearance: none;
+}
+
+.field-hint {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.field-message {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.field-error .field-control,
+.field-control[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.field-error .field-message,
+.field-message-error {
+  color: var(--danger);
+}
+
+.field-success .field-control {
+  border-color: var(--success);
+}
+
+.field-success .field-message,
+.field-message-success {
+  color: var(--success);
+}
+
+.field-disabled,
+.field-control:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.field-row {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.field-row > .field {
+  flex: 1 1 0;
+}
+
+.field-group {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.field-group-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field-group-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+  cursor: pointer;
+}
+
+.choice-control {
+  flex: 0 0 auto;
+  margin-block-start: .25em;
+}
+
+.choice-label {
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .field-row,
+  .field-group-2,
+  .field-group-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
