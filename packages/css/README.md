@@ -1,7 +1,7 @@
 # UVDL CSS Package
 
 **Status:** Draft  
-**Version:** 0.3.0 CSS Tokens MVP  
+**Version:** 0.3.0 CSS MVP  
 
 ## Purpose
 
@@ -10,7 +10,9 @@ This package contains the first practical CSS implementation of UVDL.
 The MVP is intentionally simple:
 
 ```text
-manual CSS tokens
+manual foundation tokens
+  ↓
+base CSS
   ↓
 manual component CSS
   ↓
@@ -21,12 +23,29 @@ No Builder, Compiler, Style Dictionary, schema validation, or generated CSS is u
 
 ## Files
 
-- `tokens.css` — initial CSS custom properties.
+- `foundation.css` — readable CSS custom properties.
+- `base.css` — reset and base HTML element styles.
 
 ## Usage
 
 ```html
-<link rel="stylesheet" href="/path/to/uvdl/tokens.css">
+<link rel="stylesheet" href="/path/to/uvdl/base.css">
+```
+
+`base.css` imports `foundation.css`.
+
+## Naming Rule
+
+UVDL CSS tokens do not use a brand prefix in the MVP.
+
+Prefer readable names:
+
+```css
+--surface-page
+--text-primary
+--action-primary-bg
+--space-4
+--radius-md
 ```
 
 ## Rule
