@@ -1,0 +1,93 @@
+/*
+ * Ultima Vox Design Language
+ * Contact Pattern
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Contact helps humans choose a communication path or submit a request.
+ * It is a pattern composed from Field, Action, Notice, Surface, Icon and Typography.
+ */
+
+@import url('../foundation/tokens.css');
+
+.contact {
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+.contact-muted {
+  background: var(--surface-muted);
+}
+
+.contact-inner {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.contact-header {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 48rem;
+}
+
+.contact-centered .contact-header {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.contact-info {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.contact-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-item {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.contact-item-content {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.contact-map {
+  min-height: 20rem;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-actions > * {
+    flex: 1 1 100%;
+  }
+}
