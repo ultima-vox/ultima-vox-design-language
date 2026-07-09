@@ -1,0 +1,89 @@
+/*
+ * Ultima Vox Design Language
+ * Brand Primitive
+ * Version: 0.3.0
+ * Status: Draft
+ *
+ * Brand represents project identity inside an interface.
+ * It should not contain project-specific assets in UVDL Core.
+ */
+
+@import url('../foundation/foundation.css');
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.brand-mark {
+  flex: 0 0 auto;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.brand-mark-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.brand-mark-lg {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.brand-text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.brand-name {
+  color: currentColor;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-tight);
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-heading);
+}
+
+.brand-inline {
+  flex-direction: row;
+}
+
+.brand-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-inverse {
+  color: var(--text-inverse);
+}
+
+.brand-inverse .brand-tagline {
+  color: color-mix(in srgb, var(--text-inverse) 72%, transparent);
+}
+
+@media (max-width: 640px) {
+  .brand-mark {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .brand-name {
+    font-size: var(--font-size-md);
+  }
+}
