@@ -1,0 +1,89 @@
+/*
+ * Ultima Vox Design Language
+ * Disclosure Element
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Disclosure shows or hides related information on demand.
+ * FAQ, accordion and expandable sections are patterns built with disclosure.
+ */
+
+@import url('../foundation/tokens.css');
+
+.disclosure {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+}
+
+.disclosure + .disclosure {
+  margin-block-start: var(--space-3);
+}
+
+.disclosure-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+  cursor: pointer;
+  list-style: none;
+}
+
+.disclosure-summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclosure-summary:hover {
+  color: var(--action-primary-bg);
+}
+
+.disclosure-indicator {
+  flex: 0 0 auto;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.disclosure[open] .disclosure-indicator {
+  transform: rotate(180deg);
+}
+
+.disclosure-content {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--text-secondary);
+  font-size: var(--font-size-md);
+  line-height: var(--line-body);
+}
+
+.disclosure-muted {
+  background: var(--surface-muted);
+}
+
+.disclosure-plain {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.disclosure-plain .disclosure-summary {
+  padding-inline: 0;
+}
+
+.disclosure-plain .disclosure-content {
+  padding-inline: 0;
+}
+
+.disclosure-compact .disclosure-summary {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.disclosure-compact .disclosure-content {
+  padding: 0 var(--space-4) var(--space-4);
+  font-size: var(--font-size-sm);
+}
