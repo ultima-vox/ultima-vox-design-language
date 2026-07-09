@@ -1,0 +1,88 @@
+version: 0.2.0
+status: draft
+updated: 2026-07-09
+
+entities:
+  - id: human
+    name: Human
+    type: primary
+    description: Person using or affected by the product.
+
+  - id: intent
+    name: Intent
+    type: primary
+    description: Goal the Human wants to accomplish.
+
+  - id: decision
+    name: Decision
+    type: primary
+    description: Moment where the Human chooses the next action.
+
+  - id: pattern
+    name: Pattern
+    type: primary
+    description: Repeatable solution that supports an Intent or Decision.
+
+  - id: component
+    name: Component
+    type: primary
+    description: Reusable implementation unit that realizes one or more Patterns.
+
+  - id: token
+    name: Token
+    type: primary
+    description: Semantic value used to style or configure Components.
+
+  - id: implementation
+    name: Implementation
+    type: primary
+    description: Concrete code, markup, CMS template, or runtime expression.
+
+relationships:
+  - id: human-has-intent
+    source: human
+    relation: has
+    target: intent
+
+  - id: intent-leads-to-decision
+    source: intent
+    relation: leads_to
+    target: decision
+
+  - id: decision-supported-by-pattern
+    source: decision
+    relation: supported_by
+    target: pattern
+
+  - id: pattern-realized-by-component
+    source: pattern
+    relation: realized_by
+    target: component
+
+  - id: component-styled-by-token
+    source: component
+    relation: styled_by
+    target: token
+
+  - id: component-implemented-as-implementation
+    source: component
+    relation: implemented_as
+    target: implementation
+
+  - id: token-expressed-in-implementation
+    source: token
+    relation: expressed_in
+    target: implementation
+
+rules:
+  - id: ontology-small-model
+    description: UVDL v0.2 ontology must remain explainable on one page.
+
+  - id: component-requires-pattern
+    description: A Component must not exist without a Pattern or explicit implementation need.
+
+  - id: pattern-supports-decision
+    description: A Pattern should support at least one Intent or Decision.
+
+  - id: token-is-semantic
+    description: A Token must be semantic before it is visual.
