@@ -1,0 +1,133 @@
+/*
+ * Ultima Vox Design Language
+ * Hero Pattern
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Hero introduces the main page intent and guides the first decision.
+ * It is a pattern composed from Foundation, Typography, Action, Surface and Media.
+ */
+
+@import url('../foundation/tokens.css');
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-20);
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+.hero-muted {
+  background: var(--surface-muted);
+}
+
+.hero-inverse {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.hero-media {
+  min-width: 0;
+}
+
+.hero-centered {
+  text-align: center;
+}
+
+.hero-centered .hero-inner {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.hero-centered .hero-content {
+  max-width: 52rem;
+  align-items: center;
+}
+
+.hero-centered .hero-actions,
+.hero-centered .hero-meta {
+  justify-content: center;
+}
+
+.hero-split-reverse .hero-inner {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+}
+
+.hero-split-reverse .hero-content {
+  order: 2;
+}
+
+.hero-split-reverse .hero-media {
+  order: 1;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-block: var(--space-16);
+  }
+
+  .hero-inner,
+  .hero-split-reverse .hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .hero-split-reverse .hero-content,
+  .hero-split-reverse .hero-media {
+    order: initial;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-block: var(--space-12);
+  }
+
+  .hero-content {
+    gap: var(--space-5);
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions > * {
+    flex: 1 1 100%;
+  }
+}
