@@ -1,11 +1,11 @@
 /*
  * Ultima Vox Design Language
  * Layout CSS
- * Version: 0.3.0
+ * Version: 0.4.0
  * Status: Draft
  */
 
-@import url('./foundation.css');
+@import url('./tokens.css');
 
 .container {
   width: min(100% - (var(--container-padding) * 2), var(--container-max));
