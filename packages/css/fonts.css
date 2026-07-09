@@ -1,0 +1,51 @@
+/*
+ * Ultima Vox Design Language
+ * Fonts CSS
+ * Version: 0.3.0
+ * Status: Draft
+ *
+ * Purpose:
+ * This file is the only place where a project should change font families.
+ * Keep foundation.css, base.css and components dependent on these variables.
+ */
+
+:root {
+  /* System stack by default. Safe, fast, no external requests. */
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Project font roles */
+  --font-base: var(--font-system);
+  --font-heading: var(--font-base);
+  --font-accent: var(--font-heading);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/*
+ * Optional project presets.
+ * Enable by adding a class to <html> or <body>.
+ * Example: <html class="font-preset-modern">
+ */
+
+.font-preset-system {
+  --font-base: var(--font-system);
+  --font-heading: var(--font-base);
+  --font-accent: var(--font-heading);
+}
+
+.font-preset-modern {
+  --font-base: "Inter", var(--font-system);
+  --font-heading: "Inter", var(--font-system);
+  --font-accent: "Inter", var(--font-system);
+}
+
+.font-preset-expressive {
+  --font-base: "Inter", var(--font-system);
+  --font-heading: "Unbounded", var(--font-system);
+  --font-accent: "Unbounded", var(--font-system);
+}
+
+.font-preset-editorial {
+  --font-base: "Source Sans 3", var(--font-system);
+  --font-heading: "Source Serif 4", Georgia, serif;
+  --font-accent: var(--font-heading);
+}
