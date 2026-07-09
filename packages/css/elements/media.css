@@ -1,0 +1,95 @@
+/*
+ * Ultima Vox Design Language
+ * Media Element
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Media displays visual content such as images, video, illustrations or embeds.
+ */
+
+@import url('../foundation/tokens.css');
+
+.media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+  color: var(--text-muted);
+}
+
+.media > img,
+.media > picture,
+.media > video,
+.media > iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.media > img,
+.media > video {
+  object-fit: cover;
+}
+
+.media-contain > img,
+.media-contain > video {
+  object-fit: contain;
+}
+
+.media-square {
+  aspect-ratio: 1 / 1;
+}
+
+.media-wide {
+  aspect-ratio: 16 / 9;
+}
+
+.media-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.media-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.media-rounded {
+  border-radius: var(--radius-lg);
+}
+
+.media-pill {
+  border-radius: var(--radius-pill);
+}
+
+.media-bordered {
+  border: 1px solid var(--border-default);
+}
+
+.media-caption {
+  margin-block-start: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-4);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--surface-inverse) 72%, transparent) 100%
+  );
+  color: var(--text-inverse);
+}
+
+.media-placeholder {
+  display: grid;
+  min-height: 10rem;
+  place-items: center;
+  padding: var(--space-6);
+  text-align: center;
+}
