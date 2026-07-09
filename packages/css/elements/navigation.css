@@ -1,0 +1,141 @@
+/*
+ * Ultima Vox Design Language
+ * Navigation Element
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Navigation helps humans move between information areas.
+ * Header, footer, tabs, breadcrumbs and pagination are patterns built with navigation.
+ */
+
+@import url('../foundation/tokens.css');
+
+.navigation {
+  display: block;
+  min-width: 0;
+  color: var(--text-primary);
+}
+
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-item {
+  min-width: 0;
+}
+
+.navigation-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.5rem;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.navigation-link:hover {
+  background: var(--surface-muted);
+  color: var(--text-primary);
+}
+
+.navigation-link[aria-current="page"],
+.navigation-link[aria-current="true"] {
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  font-weight: var(--weight-semibold);
+}
+
+.navigation-horizontal .navigation-list {
+  flex-direction: row;
+}
+
+.navigation-vertical .navigation-list {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.navigation-vertical .navigation-link {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.navigation-compact .navigation-list {
+  gap: var(--space-1);
+}
+
+.navigation-compact .navigation-link {
+  min-height: 2rem;
+  padding-inline: var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.navigation-primary .navigation-link {
+  color: var(--text-primary);
+}
+
+.navigation-secondary .navigation-link {
+  color: var(--text-muted);
+}
+
+.navigation-inverse {
+  color: var(--text-inverse);
+}
+
+.navigation-inverse .navigation-link {
+  color: color-mix(in srgb, var(--text-inverse) 78%, transparent);
+}
+
+.navigation-inverse .navigation-link:hover,
+.navigation-inverse .navigation-link[aria-current="page"],
+.navigation-inverse .navigation-link[aria-current="true"] {
+  background: color-mix(in srgb, var(--text-inverse) 12%, transparent);
+  color: var(--text-inverse);
+}
+
+.navigation-label {
+  display: block;
+  padding: 0 var(--space-3) var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.navigation-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-default);
+}
+
+.navigation-vertical .navigation-divider {
+  width: 100%;
+  height: 1px;
+}
+
+@media (max-width: 640px) {
+  .navigation-list {
+    align-items: stretch;
+  }
+
+  .navigation-link {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
