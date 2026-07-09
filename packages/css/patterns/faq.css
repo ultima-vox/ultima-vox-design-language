@@ -1,0 +1,74 @@
+/*
+ * Ultima Vox Design Language
+ * FAQ Pattern
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * FAQ helps humans resolve doubts and reduce decision friction.
+ * It is a pattern composed from Disclosure, Surface and Typography.
+ */
+
+@import url('../foundation/tokens.css');
+
+.faq {
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+.faq-muted {
+  background: var(--surface-muted);
+}
+
+.faq-inner {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.faq-header {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 48rem;
+}
+
+.faq-centered .faq-header {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.faq-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.faq-list-compact {
+  gap: var(--space-2);
+}
+
+.faq-layout-split {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: start;
+}
+
+.faq-layout-split .faq-header {
+  position: sticky;
+  top: calc(var(--space-8) + 4rem);
+}
+
+.faq-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  padding-block-start: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .faq-layout-split {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-layout-split .faq-header {
+    position: static;
+  }
+}
