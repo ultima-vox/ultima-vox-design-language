@@ -14,25 +14,56 @@ manual foundation tokens
   ↓
 base CSS
   ↓
-manual component CSS
+primitive components
+  ↓
+composite patterns
   ↓
 reference project usage
 ```
 
 No Builder, Compiler, Style Dictionary, schema validation, or generated CSS is used at this stage.
 
-## Files
+## Structure
 
-- `foundation.css` — readable CSS custom properties.
-- `base.css` — reset and base HTML element styles.
+```text
+packages/css/
+  foundation/
+    fonts.css
+    foundation.css
+    base.css
+    typography.css
+    layout.css
+
+  primitives/
+    action.css
+    surface.css
+
+  composites/
+    coming later
+```
+
+## Foundation Files
+
+- `foundation/fonts.css` — project font roles and presets.
+- `foundation/foundation.css` — readable CSS custom properties.
+- `foundation/base.css` — reset and base HTML element styles.
+- `foundation/typography.css` — text scale utility classes.
+- `foundation/layout.css` — container, section, stack, cluster and grid utilities.
+
+## Primitive Files
+
+- `primitives/action.css` — universal action component.
+- `primitives/surface.css` — universal information surface component.
 
 ## Usage
 
 ```html
-<link rel="stylesheet" href="/path/to/uvdl/base.css">
+<link rel="stylesheet" href="/path/to/uvdl/foundation/base.css">
+<link rel="stylesheet" href="/path/to/uvdl/foundation/typography.css">
+<link rel="stylesheet" href="/path/to/uvdl/foundation/layout.css">
+<link rel="stylesheet" href="/path/to/uvdl/primitives/action.css">
+<link rel="stylesheet" href="/path/to/uvdl/primitives/surface.css">
 ```
-
-`base.css` imports `foundation.css`.
 
 ## Naming Rule
 
@@ -47,6 +78,26 @@ Prefer readable names:
 --space-4
 --radius-md
 ```
+
+## Architecture Rule
+
+Core CSS must avoid business-domain names.
+
+Good:
+
+```html
+<article class="surface surface-card">
+```
+
+Project-specific:
+
+```html
+<article class="surface surface-card service-card">
+```
+
+`surface surface-card` belongs to UVDL.
+
+`service-card` belongs to the project.
 
 ## Rule
 
