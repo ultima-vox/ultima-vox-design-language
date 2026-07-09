@@ -1,0 +1,76 @@
+/*
+ * Ultima Vox Design Language
+ * Status Element
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Status describes the state of an object.
+ * It is about object state, not user attention.
+ */
+
+@import url('../foundation/tokens.css');
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 1.5rem;
+  padding: 0 var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--surface-muted);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: .5rem;
+  height: .5rem;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+}
+
+.status-neutral {
+  background: var(--surface-muted);
+  color: var(--text-secondary);
+}
+
+.status-info {
+  background: color-mix(in srgb, var(--info) 10%, var(--surface-page));
+  color: var(--info);
+}
+
+.status-success {
+  background: color-mix(in srgb, var(--success) 10%, var(--surface-page));
+  color: var(--success);
+}
+
+.status-warning {
+  background: color-mix(in srgb, var(--warning) 12%, var(--surface-page));
+  color: var(--warning);
+}
+
+.status-danger {
+  background: color-mix(in srgb, var(--danger) 10%, var(--surface-page));
+  color: var(--danger);
+}
+
+.status-bordered {
+  border-color: currentColor;
+  background: transparent;
+}
+
+.status-sm {
+  min-height: 1.25rem;
+  padding-inline: var(--space-1);
+  font-size: var(--font-size-xs);
+}
+
+.status-lg {
+  min-height: 1.875rem;
+  padding-inline: var(--space-3);
+  font-size: var(--font-size-sm);
+}
