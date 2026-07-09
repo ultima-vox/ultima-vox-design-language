@@ -4,7 +4,7 @@
  * Version: 0.3.0
  */
 
-@import url('./tokens.css');
+@import url('./foundation.css');
 
 *,
 *::before,
@@ -21,12 +21,12 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--uv-color-surface-page);
-  color: var(--uv-color-text-primary);
-  font-family: var(--uv-font-family-base);
-  font-size: var(--uv-font-size-md);
-  line-height: var(--uv-line-height-body);
-  font-weight: var(--uv-font-weight-regular);
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-base);
+  font-size: var(--font-size-md);
+  line-height: var(--line-body);
+  font-weight: var(--weight-regular);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,7 +48,7 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--uv-duration-fast) var(--uv-ease-standard);
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 
 button,
@@ -62,27 +62,37 @@ button {
   cursor: pointer;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
-  font-family: var(--uv-font-family-heading);
-  font-weight: var(--uv-font-weight-bold);
-  line-height: var(--uv-line-height-heading);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-heading);
 }
 
-p,ul,ol,figure,blockquote {
+p,
+ul,
+ol,
+figure,
+blockquote {
   margin: 0;
 }
 
-ul,ol {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }
 
 :focus-visible {
-  outline: 2px solid var(--uv-color-info);
+  outline: 2px solid var(--info);
   outline-offset: 2px;
 }
 
 [hidden] {
-  display:none !important;
+  display: none !important;
 }
