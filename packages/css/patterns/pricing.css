@@ -1,0 +1,118 @@
+/*
+ * Ultima Vox Design Language
+ * Pricing Pattern
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Pricing helps humans compare offers and choose a commitment level.
+ * It is a pattern composed from Surface, Status, Action, Icon and Typography.
+ */
+
+@import url('../foundation/tokens.css');
+
+.pricing {
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+.pricing-muted {
+  background: var(--surface-muted);
+}
+
+.pricing-inner {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.pricing-header {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 48rem;
+}
+
+.pricing-centered .pricing-header {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.pricing-card-featured {
+  transform: translateY(-0.5rem);
+}
+
+.pricing-card-header {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.pricing-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.pricing-price-value {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--line-tight);
+  letter-spacing: -0.03em;
+}
+
+.pricing-price-meta {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.pricing-features {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.pricing-feature {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.pricing-actions {
+  display: grid;
+  gap: var(--space-3);
+  margin-block-start: auto;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-card-featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
