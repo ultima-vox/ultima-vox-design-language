@@ -1,0 +1,93 @@
+/*
+ * Ultima Vox Design Language
+ * Typography CSS
+ * Version: 0.3.0
+ * Status: Draft
+ */
+
+@import url('./foundation.css');
+
+.text-display {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--line-tight);
+  letter-spacing: -0.03em;
+}
+
+.text-headline {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-3xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--line-heading);
+  letter-spacing: -0.02em;
+}
+
+.text-title {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+  letter-spacing: -0.01em;
+}
+
+.text-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+}
+
+.text-body {
+  color: var(--text-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+}
+
+.text-body-muted {
+  color: var(--text-muted);
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+}
+
+.text-small {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-body);
+}
+
+.text-caption {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-body);
+}
+
+.text-label {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+}
+
+.text-inverse {
+  color: var(--text-inverse);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
