@@ -1,0 +1,115 @@
+/*
+ * Ultima Vox Design Language
+ * Footer Pattern
+ * Version: 0.4.0
+ * Status: Draft
+ *
+ * Footer closes the page with secondary orientation, brand memory and meta information.
+ * It is a pattern composed from Brand, Navigation, Surface and Typography.
+ */
+
+@import url('../foundation/tokens.css');
+
+.footer {
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-default);
+}
+
+.footer-inverse {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  border-top-color: color-mix(in srgb, var(--text-inverse) 16%, transparent);
+}
+
+.footer-inner {
+  display: grid;
+  gap: var(--space-10);
+  padding-block: var(--space-16);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 24rem;
+}
+
+.footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+}
+
+.footer-group {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-title {
+  color: currentColor;
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-heading);
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block-start: var(--space-6);
+  border-top: 1px solid var(--border-default);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.footer-inverse .footer-meta {
+  border-top-color: color-mix(in srgb, var(--text-inverse) 16%, transparent);
+  color: color-mix(in srgb, var(--text-inverse) 72%, transparent);
+}
+
+.footer-inverse .navigation-link,
+.footer-inverse .brand-tagline {
+  color: color-mix(in srgb, var(--text-inverse) 72%, transparent);
+}
+
+.footer-inverse .navigation-link:hover {
+  color: var(--text-inverse);
+  background: color-mix(in srgb, var(--text-inverse) 10%, transparent);
+}
+
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    padding-block: var(--space-12);
+  }
+
+  .footer-navigation {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-meta {
+    flex-direction: column;
+  }
+}
