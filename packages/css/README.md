@@ -48,10 +48,39 @@ packages/css/
     surface.css
 
   patterns/
+    catalog.css
+    contact.css
+    faq.css
+    footer.css
+    form.css
     header.css
     hero.css
-    footer.css
+    pricing.css
 ```
+
+## Dependency Graph
+
+Dependencies are one-way.
+
+```text
+Foundation
+  ↓
+Elements
+  ↓
+Patterns
+  ↓
+Templates
+  ↓
+Applications
+```
+
+Rules:
+
+- Foundation imports nothing from Elements or Patterns.
+- Elements may import Foundation.
+- Patterns may import Foundation and use Elements in markup.
+- Patterns must not depend on project business classes.
+- Projects may import everything they need.
 
 ## Foundation Files
 
@@ -77,9 +106,27 @@ packages/css/
 
 ## Pattern Files
 
-- `patterns/header.css` — persistent orientation and primary navigation pattern.
-- `patterns/hero.css` — main intent and first decision pattern.
-- `patterns/footer.css` — closing navigation, brand and meta information pattern.
+- `patterns/catalog.css` — scan, compare and choose from a collection.
+- `patterns/contact.css` — choose a communication path or submit a request.
+- `patterns/faq.css` — resolve doubts and reduce decision friction.
+- `patterns/footer.css` — closing navigation, brand and meta information.
+- `patterns/form.css` — provide structured information and complete a request.
+- `patterns/header.css` — persistent orientation and primary navigation.
+- `patterns/hero.css` — main intent and first decision.
+- `patterns/pricing.css` — compare offers and choose a commitment level.
+
+## Composition Matrix
+
+| Pattern | Main Elements |
+|---|---|
+| Header | Brand · Navigation · Action · Surface |
+| Hero | Surface · Media · Action · Status · Typography |
+| Footer | Brand · Navigation · Surface · Typography |
+| FAQ | Disclosure · Surface · Typography |
+| Contact | Field · Action · Notice · Surface · Icon · Typography |
+| Pricing | Surface · Status · Action · Icon · Typography |
+| Catalog | Surface · Media · Status · Action · Icon · Typography |
+| Form | Field · Action · Notice · Surface · Typography |
 
 ## Usage
 
@@ -98,9 +145,14 @@ packages/css/
 <link rel="stylesheet" href="/path/to/uvdl/elements/notice.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/status.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/surface.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/catalog.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/contact.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/faq.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/footer.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/form.css">
 <link rel="stylesheet" href="/path/to/uvdl/patterns/header.css">
 <link rel="stylesheet" href="/path/to/uvdl/patterns/hero.css">
-<link rel="stylesheet" href="/path/to/uvdl/patterns/footer.css">
+<link rel="stylesheet" href="/path/to/uvdl/patterns/pricing.css">
 ```
 
 ## Naming Rule
@@ -312,6 +364,21 @@ navigation.css
 notice.css
 status.css
 surface.css
+```
+
+## Current Patterns Status
+
+The initial commercial-site Patterns MVP currently includes:
+
+```text
+catalog.css
+contact.css
+faq.css
+footer.css
+form.css
+header.css
+hero.css
+pricing.css
 ```
 
 ## Rule
