@@ -58,6 +58,13 @@ entities:
     spec: UVDL-011
     description: Concrete code, markup, CMS template, or runtime expression.
 
+  - id: brand
+    name: Brand
+    type: secondary
+    status: draft
+    spec: ADR-007
+    description: Identity expression of a project or organization inside an interface.
+
 relationships:
   - id: human-has-intent
     source: human
@@ -108,6 +115,20 @@ relationships:
     status: draft
     spec: UVDL-012
 
+  - id: brand-realized-by-component
+    source: brand
+    relation: realized_by
+    target: component
+    status: draft
+    spec: ADR-007
+
+  - id: brand-expressed-in-implementation
+    source: brand
+    relation: expressed_in
+    target: implementation
+    status: draft
+    spec: ADR-007
+
 rules:
   - id: ontology-small-model
     status: draft
@@ -128,3 +149,8 @@ rules:
     status: draft
     spec: UVDL-012
     description: A Token must be semantic before it is visual.
+
+  - id: brand-is-secondary
+    status: draft
+    spec: ADR-007
+    description: Brand is a secondary entity, not an eighth primary ontology entity.
