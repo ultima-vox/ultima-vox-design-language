@@ -37,7 +37,11 @@ packages/css/
   elements/
     action.css
     brand.css
+    field.css
+    icon.css
     navigation.css
+    notice.css
+    status.css
     surface.css
 
   patterns/
@@ -56,7 +60,11 @@ packages/css/
 
 - `elements/action.css` — universal action element.
 - `elements/brand.css` — universal brand identity element.
+- `elements/field.css` — universal input and form field element.
+- `elements/icon.css` — universal icon element.
 - `elements/navigation.css` — universal navigation element.
+- `elements/notice.css` — user-facing notice element.
+- `elements/status.css` — object state element.
 - `elements/surface.css` — universal information surface element.
 
 ## Usage
@@ -67,7 +75,11 @@ packages/css/
 <link rel="stylesheet" href="/path/to/uvdl/foundation/layout.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/action.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/brand.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/field.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/icon.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/navigation.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/notice.css">
+<link rel="stylesheet" href="/path/to/uvdl/elements/status.css">
 <link rel="stylesheet" href="/path/to/uvdl/elements/surface.css">
 ```
 
@@ -141,6 +153,42 @@ Good:
     </li>
   </ul>
 </nav>
+```
+
+## Notice and Status Rule
+
+Notice and Status are not the same concept.
+
+`notice` communicates something the human should know now.
+
+```html
+<div class="notice notice-warning">
+  <div class="notice-content">
+    <strong class="notice-title">Limited time</strong>
+    <p class="notice-text">The offer ends soon.</p>
+  </div>
+</div>
+```
+
+`status` describes the state of an object.
+
+```html
+<span class="status status-success">
+  <span class="status-dot" aria-hidden="true"></span>
+  Available
+</span>
+```
+
+## Icon Rule
+
+Icons support recognition, orientation, or state.
+
+Icons should not replace text by default.
+
+```html
+<span class="icon icon-sm" aria-hidden="true">
+  <svg viewBox="0 0 24 24"></svg>
+</span>
 ```
 
 ## Rule
